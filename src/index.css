@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --color-blush: #fff1f5;
+  --color-rose: #fb7185;
+  --color-petal: #fda4af;
+  --color-berry: #be123c;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: #9f1239;
+  background: radial-gradient(1200px 800px at 12% 8%, #ffe4ef 0%, transparent 55%),
+    radial-gradient(900px 700px at 92% 12%, #fce7f3 0%, transparent 50%),
+    radial-gradient(800px 600px at 50% 100%, #fecdd3 0%, transparent 45%),
+    #fff1f6;
+  overflow-x: hidden;
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.15) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 10px 30px rgba(244, 63, 94, 0.28);
+  }
+  50% {
+    box-shadow: 0 14px 40px rgba(244, 63, 94, 0.45);
+  }
+}
+
+@keyframes soft-pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.heart-particle {
+  animation: float-heart linear infinite;
+}
+
+.yes-glow {
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+.card-enter {
+  animation: soft-pop 0.55s ease-out both;
+}
+
+@keyframes heavy-shake {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  6% {
+    transform: translate(-16px, -10px) rotate(-12deg);
+  }
+  12% {
+    transform: translate(18px, 8px) rotate(11deg);
+  }
+  18% {
+    transform: translate(-20px, 10px) rotate(-14deg);
+  }
+  24% {
+    transform: translate(22px, -9px) rotate(13deg);
+  }
+  30% {
+    transform: translate(-18px, -12px) rotate(-10deg);
+  }
+  36% {
+    transform: translate(20px, 11px) rotate(12deg);
+  }
+  44% {
+    transform: translate(-14px, 8px) rotate(-9deg);
+  }
+  52% {
+    transform: translate(16px, -7px) rotate(8deg);
+  }
+  62% {
+    transform: translate(-10px, 6px) rotate(-6deg);
+  }
+  74% {
+    transform: translate(8px, -4px) rotate(4deg);
+  }
+  86% {
+    transform: translate(-4px, 2px) rotate(-2deg);
+  }
+}
+
+.shake-hard {
+  animation: heavy-shake 0.62s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes heavy-shake-sm {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  10% {
+    transform: translate(-8px, -5px) rotate(-7deg);
+  }
+  20% {
+    transform: translate(9px, 5px) rotate(7deg);
+  }
+  30% {
+    transform: translate(-10px, 6px) rotate(-8deg);
+  }
+  40% {
+    transform: translate(10px, -5px) rotate(7deg);
+  }
+  55% {
+    transform: translate(-7px, 4px) rotate(-5deg);
+  }
+  70% {
+    transform: translate(6px, -3px) rotate(4deg);
+  }
+  85% {
+    transform: translate(-3px, 2px) rotate(-2deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .shake-hard {
+    animation-name: heavy-shake-sm;
+  }
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+input[type="date"],
+input[type="time"] {
+  color-scheme: light;
+}
