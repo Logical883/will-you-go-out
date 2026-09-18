@@ -43,7 +43,7 @@ export default function App() {
   }
 
   return (
-    <div className="relative flex min-h-dvh items-center justify-center px-3 py-6 sm:px-6 sm:py-10 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+    <div className="relative flex min-h-dvh flex-col items-center justify-center px-3 py-6 sm:px-6 sm:py-10 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))]">
       <HeartField />
 
       <main className="card-enter relative z-10 w-full max-w-xl rounded-[28px] border border-rose-200 bg-white/95 px-5 py-8 text-center shadow-[0_24px_80px_rgba(190,18,60,0.18)] backdrop-blur-xl sm:rounded-[32px] sm:px-12 sm:py-12">
@@ -143,11 +143,16 @@ export default function App() {
               smiling before you even see me, grateful that you chose this moment with me.
             </p>
             <p className="font-script mt-6 text-[clamp(1.6rem,6vw,1.9rem)] text-rose-600 sm:mt-8">
-              always yours
+              always yours, Albert
             </p>
           </section>
         )}
       </main>
+
+      <footer className="relative z-10 mt-6 text-center sm:mt-8">
+        <p className="text-sm font-semibold tracking-[0.28em] text-rose-400 uppercase">Logical</p>
+        <p className="mt-1 text-xs text-rose-300">2026</p>
+      </footer>
     </div>
   )
 }

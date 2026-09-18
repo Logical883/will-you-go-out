@@ -14,7 +14,6 @@ export async function sendReplyEmail(when: string, date: string, time: string) {
     body: JSON.stringify({
       _subject: `She said yes — ${when}`,
       _captcha: 'false',
-      name: recipient.name,
       date,
       time,
       when,
